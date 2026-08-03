@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sucesso - Smart Frete</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#455f88",
+                    "on-secondary-fixed-variant": "#00497e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#d2e4ff",
+                    "secondary": "#0061a5",
+                    "on-tertiary-container": "#4bb278",
+                    "surface": "#f7fafc",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-low": "#f1f4f6",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed-variant": "#00522f",
+                    "on-surface": "#181c1e",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-background": "#181c1e",
+                    "tertiary-fixed-dim": "#74db9d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e5e9eb",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-secondary-container": "#004172",
+                    "primary": "#002045",
+                    "on-primary-container": "#86a0cd",
+                    "on-tertiary-fixed": "#002110",
+                    "outline-variant": "#c4c6cf",
+                    "tertiary": "#002713",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#003f23",
+                    "secondary-fixed-dim": "#9fcaff",
+                    "on-secondary-fixed": "#001d37",
+                    "background": "#f7fafc",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#1a365d",
+                    "surface-bright": "#f7fafc",
+                    "surface-dim": "#d7dadc",
+                    "surface-container": "#ebeef0",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed": "#91f8b8",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#adc7f7",
+                    "outline": "#74777f",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "secondary-container": "#66affe",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#43474e",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "max-width": "1440px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "code-md": ["monospace"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "title-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "code-md": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "title-md": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar (Shell) -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full max-w-max-width mx-auto fixed top-0 z-50">
+<div class="font-headline-md text-headline-md font-bold text-primary">Smart Frete</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Cadastro Concluído</span>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-full">
+<!-- SideNavBar (Shell) -->
+<aside class="bg-surface-container-low h-full w-64 hidden md:flex flex-col fixed left-0 top-16 bottom-0 z-40">
+<div class="p-lg flex flex-col gap-xs">
+<div class="flex items-center gap-sm mb-lg">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+<div>
+<p class="font-title-md text-title-md font-bold text-on-surface">Registration</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Free Plan Setup</p>
+</div>
+</div>
+<nav class="flex flex-col gap-xs">
+<div class="flex items-center gap-sm p-sm text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Account</span>
+</div>
+<div class="flex items-center gap-sm p-sm text-on-surface-variant">
+<span class="material-symbols-outlined">business</span>
+<span class="font-label-md text-label-md">Company</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md">Success</span>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area (Canvas) -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop flex items-center justify-center">
+<canvas class="confetti-canvas" id="confetti"></canvas>
+<div class="w-full max-w-2xl text-center space-y-lg relative">
+<!-- Success Visual -->
+<div class="relative inline-block">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-tertiary-fixed flex items-center justify-center animate-float shadow-lg mx-auto">
+<span class="material-symbols-outlined text-[64px] text-on-tertiary-fixed-variant" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Orbital elements -->
+<div class="absolute -top-4 -right-4 w-8 h-8 bg-secondary-container rounded-full animate-bounce"></div>
+<div class="absolute -bottom-2 -left-4 w-6 h-6 bg-primary-container rounded-full opacity-50"></div>
+</div>
+<div class="space-y-sm">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Conta criada com sucesso!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                        Bem-vindo ao Smart Frete. Você já pode começar suas primeiras simulações no Plano Free e otimizar sua logística hoje mesmo.
+                    </p>
+</div>
+<!-- Bento Info Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md text-left mt-xl">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-secondary mb-sm">speed</span>
+<h3 class="font-title-md text-title-md text-primary">Simulação Instantânea</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Calcule custos de frete em segundos com nossa IA proprietária.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-secondary mb-sm">dashboard_customize</span>
+<h3 class="font-title-md text-title-md text-primary">Painel de Controle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gerencie todas as suas cotações em um único lugar centralizado.</p>
+</div>
+</div>
+<div class="pt-lg">
+<button class="bg-secondary text-on-secondary px-xl py-md rounded-full font-title-md hover:bg-on-secondary-fixed-variant transition-all transform hover:scale-105 shadow-md flex items-center gap-sm mx-auto">
+                        Ir para o Dashboard
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="font-label-md text-label-md text-on-surface-variant mt-md">
+                        Configurando seu ambiente de trabalho... 100%
+                    </p>
+</div>
+</div>
+</main>
+</div>
+<!-- Success Illustration Background (Subtle) -->
+<div class="fixed bottom-0 right-0 p-xl opacity-10 pointer-events-none hidden lg:block">
+<div class="w-96 h-96 bg-contain bg-no-repeat bg-bottom" data-alt="A sophisticated 3D isometric illustration of a logistics hub with high-tech warehouses, automated trucks, and holographic data screens. The scene is bathed in a professional soft blue and white lighting, reflecting a corporate modern aesthetic. Clean lines and minimalist architecture dominate the view, representing efficiency and successful operations." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYbJJmxeCLGyl6rJNyoR3XGwgLVD6K_p68Ywl5E5TVPfSmRMwOq7jy7l9B_KLQ7bZFGPEWegpc-Iotxv7NWH7TdiHGWRaFuDFrPbG0hzj7a48KFrr-VaJOIeIxhnByadxNHakBGDuRiHakia7MSa5ddinuGTLnwgWLfS_izx9-JlPUwY-wjLPto-NQp0gLLDu6e_dX_yB1POG0bX4LwQoLr7afHFRgNr3fw7hFL4KpavP4r2nR5LPHtg')"></div>
+</div>
+<script>
+        // Simple Confetti Effect
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const colors = ['#3182CE', '#38A169', '#002045', '#91f8b8', '#66affe'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 3 + 2;
+                this.speedX = Math.random() * 2 - 1;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+                if (this.y > canvas.height) {
+                    this.y = -20;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body></html>
